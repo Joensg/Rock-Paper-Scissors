@@ -48,7 +48,7 @@
                 <div class="col-md-4 col-xs-12">
                     <div class="row">
                         <div ng-repeat="x in choices" class="col-md-4 col-xs-12 center">
-                            <a class="center" href="#"><i ng-click="rps_game($index)" class="fa fa-hand-{{x}}-o fa-5x"></i></a>
+                            <a class="center" href="#gamelog"><i ng-click="rps_game($index)" class="fa fa-hand-{{x}}-o fa-5x"></i></a>
                             <div class="center">{{x}}</div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                 <div class="col-md-4 col-xs-12">
                     <br>
                     <h3 class="center">Game log:</h3>
-                    <div class="gamelog"></div>
+                    <div id="gamelog" class="gamelog"></div>
                 </div>
             </div>
         </div>
