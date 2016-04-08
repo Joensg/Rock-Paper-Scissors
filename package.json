@@ -1,0 +1,14 @@
+{
+  "name": "rock_paper_scissors",
+  "version": "1.0.0",
+  "description": "A single page application, built using the Angular Javascript framework, where the user plays Rock-paper-scissors Game against the computer.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joel Sequeira",
+  "license": "ISC"
+}
