@@ -1,0 +1,13 @@
+.center {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.txt_center {
+    text-align: center;
+}
+
+.gamelog {
+    padding-bottom: 20px;
+}
