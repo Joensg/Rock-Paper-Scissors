@@ -1,6 +1,5 @@
 .center {
     margin: auto;
-    width: 100%;
     text-align: center;
 }
 
@@ -10,4 +9,21 @@
 
 .gamelog {
     padding-bottom: 20px;
+}
+
+.row {
+    padding: 10px 10px 10px 10px;
+    min-height: 50px;
+}
+
+.topofpage {
+    padding-top: 50px;
+}
+
+nav.navbar {
+     background-color: rgb(57, 226, 164);   
+}
+
+footer {
+    background-color: rgba(57, 226, 164, 0.4);
 }

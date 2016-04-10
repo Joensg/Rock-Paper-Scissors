@@ -18,6 +18,13 @@ angular.module('rpsApp')
     };
     
     gamefac.getResult = function($scope, userChoiceIndex) {
+        
+        // retrieve last game number if not first game
+        if(games.length !== 0){
+            var last_game_no = parseInt(games[games.length - 1].number);
+            $scope.count = last_game_no;
+        }
+
         // keep track of game number
         $scope.count++;
         // initialize and reset previous game and winner data
