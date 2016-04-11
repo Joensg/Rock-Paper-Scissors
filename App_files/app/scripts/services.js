@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('rpsApp')
-    .factory('gameFactory', function() {
+    .constant("baseURL","http://localhost:3000/")
+    .factory('gameFactory', ['$resource', 'baseURL', function($resource,baseURL) {
     var games = [];
     var gamefac = {};
     
@@ -33,8 +34,8 @@ angular.module('rpsApp')
         
         //compute random guess for comp_number using Math.random()
         var compChoiceIndex = Math.floor((Math.random() * 3));
-        // compute difference of comp_number and player_number modulo five
-        var difference = (userChoiceIndex - compChoiceIndex) % 5;
+        // compute difference of comp_number and player_number modulo three
+        var difference = (userChoiceIndex - compChoiceIndex) % 3;
         
         // use if/elif/else to determine winner, print winner message
         if ((difference === 1) || (difference === -2)) {
@@ -61,5 +62,4 @@ angular.module('rpsApp')
     };
     
     return gamefac;
-})
-;
+}]);

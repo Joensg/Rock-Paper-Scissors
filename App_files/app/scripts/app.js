@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('rpsApp', ['ui.router'])
+angular.module('rpsApp', ['ui.router', 'ui.bootstrap', 'ngResource'])
     .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
     
@@ -9,7 +9,7 @@ angular.module('rpsApp', ['ui.router'])
             url:'/',
             views: {
                 'header': {
-                    templateUrl : 'views/header.html',
+                    templateUrl : 'views/header.html'
                 },
                 'content': {
                     templateUrl : 'views/home.html',

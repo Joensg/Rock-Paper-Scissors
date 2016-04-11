@@ -1,0 +1,34 @@
+{
+    "games": [
+        { //"rock", "paper", "scissors"
+            "number": 1,
+            "playerChoice": "rock",
+            "computerChoice": "scissors",
+            "winner": "Player",
+        },
+        {
+            "number": 2,
+            "playerChoice": "paper",
+            "computerChoice": "scissors",
+            "winner": "Computer",
+        },
+        {
+            "number": 3,
+            "playerChoice": "scissors",
+            "computerChoice": "scissors",
+            "winner": "Tie",
+        },
+        {
+            "number": 4,
+            "playerChoice": "rock",
+            "computerChoice": "paper",
+            "winner": "Computer",
+        },
+        {
+            "number": 5,
+            "playerChoice": "paper",
+            "computerChoice": "rock",
+            "winner": "Player",
+        }
+    ]
+}

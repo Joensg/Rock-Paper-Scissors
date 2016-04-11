@@ -1,7 +1,6 @@
 'use strict';
 
 angular.module('rpsApp')
-    
     .controller('GameController', ['$scope','gameFactory', function($scope, gameFactory) {
         $scope.count = 0;
         $scope.choices = gameFactory.getChoices();
