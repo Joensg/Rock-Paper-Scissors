@@ -1,0 +1,41 @@
+<div class="container topofpage" ng-controller="LoginController">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4" ng-show="!isloggedin()">
+            <div class="alert alert-info">
+                {{message}}
+            </div>
+            <h2>Login or <a ui-sref="app.register" ng-show="!isloggedin()">Register</a></h2>
+            <form name="loginform" ng-submit="form.$valid && login()" novalidate>
+                <div class="form-group" ng-class="{ 'has-error': loginform.$submitted && loginform.username.$invalid }">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" class="form-control" placeholder="Enter username" ng-model="username" required />
+                    <div ng-messages="loginform.$submitted && loginform.username.$error" class="help-block" role="alert">
+                        <div ng-message="required">Username is required</div>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error': loginform.password.$dirty && loginform.password.$error.required }">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Enter password" ng-model="password" required />
+                    <div ng-messages="loginform.password.$dirty && loginform.password.$error" class="help-block" role="alert">
+                        <div ng-message="required">Password is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button ng-click="login()" ng-disabled="loading" class="btn btn-primary">Login</button>
+                    <i ng-if="loading" class="fa fa-spinner fa-2x fa-spin"></i>
+                </div>
+                <div ng-if="error" class="alert alert-danger">{{error}}</div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4" ng-show="isloggedin()">
+            <div class="alert alert-info">
+                Have a good day!
+            </div>
+            <h2>Logout</h2>
+            <button ng-click="logout()" ng-disabled="loading" class="btn btn-primary">Logout</button>
+            <i ng-if="loading" class="fa fa-spinner fa-2x fa-spin"></i>
+        </div>
+    </div>
+</div>

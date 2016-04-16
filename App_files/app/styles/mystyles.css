@@ -1,5 +1,5 @@
 .navbar-inverse {
-     background: rgb(57, 226, 164); 
+    background: rgb(57, 226, 164);
 }
 
 .navbar-inverse .navbar-nav > .active > a,
@@ -10,8 +10,8 @@
 }
 
 .navbar-inverse .navbar-nav > .open > a,
- .navbar-inverse .navbar-nav > .open > a:hover,
- .navbar-inverse .navbar-nav > .open > a:focus {
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
     color: #000;
     background: #007EEA;
 }
@@ -19,16 +19,16 @@
 .navbar-inverse .navbar-nav .open .dropdown-menu> li> a,
 .navbar-inverse .navbar-nav .open .dropdown-menu {
     background-color: #007EEA;
-    color:#eeeeee;
+    color: #eeeeee;
 }
 
 .navbar-inverse .navbar-nav .open .dropdown-menu> li> a:hover {
-    color:#000000;
+    color: #000000;
 }
 
 .navbar-inverse .navbar-nav>li>a {
     color: #000;
-    text-align:center;
+    text-align: center;
 }
 
 .navbar-inverse .navbar-brand {

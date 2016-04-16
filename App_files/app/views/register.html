@@ -1,0 +1,42 @@
+<div class="container topofpage" ng-controller="LoginController">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <h2>Register New User</h2>
+            <form name="loginform" ng-submit="form.$valid && login()" novalidate>
+                <div class="form-group" ng-class="{ 'has-error': loginform.$submitted && loginform.username.$invalid }">
+                    <label for="firstname">First Name</label>
+                    <input type="text" name="firstname" class="form-control" placeholder="Enter first name" ng-model="firstname" required />
+                    <div ng-messages="loginform.$submitted && loginform.firstname.$error" class="help-block" role="alert">
+                        <div ng-message="required">First name is required</div>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error': loginform.$submitted && loginform.lastname.$invalid }">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" name="lastname" class="form-control" placeholder="Enter last name" ng-model="lastname" required />
+                    <div ng-messages="loginform.$submitted && loginform.lastname.$error" class="help-block" role="alert">
+                        <div ng-message="required">Last name is required</div>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error': loginform.$submitted && loginform.username.$invalid }">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" class="form-control" placeholder="Enter username" ng-model="username" required />
+                    <div ng-messages="loginform.$submitted && loginform.username.$error" class="help-block" role="alert">
+                        <div ng-message="required">Username is required</div>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error': loginform.password.$dirty && loginform.password.$error.required }">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Enter password" ng-model="password" required />
+                    <div ng-messages="loginform.password.$dirty && loginform.password.$error" class="help-block" role="alert">
+                        <div ng-message="required">Password is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button ng-click="register()" ng-disabled="loading" class="btn btn-primary">Register</button>
+                    <i ng-if="loading" class="fa fa-spinner fa-2x fa-spin"></i>
+                </div>
+                <div ng-if="error" class="alert alert-danger">{{error}}</div>
+            </form>
+        </div>
+    </div>
+</div>
