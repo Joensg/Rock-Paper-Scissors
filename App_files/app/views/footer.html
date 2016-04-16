@@ -1,20 +1,23 @@
-<footer>
+<footer ng-controller="LoginController">
     <div class="container">
         <div class="row row-footer">
             <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
                 <h4>Links</h4>
                 <ul class="list-unstyled">
                     <li><a ui-sref="app">Home</a></li>
-                    <li><a ui-sref="app.game">Game</a></li>
-                    <li><a ui-sref="app.gamelog">Gamelog</a></li>
+                    <li><a ui-sref="app.game" ng-show="isloggedin()">Game</a></li>
+                    <li><a ui-sref="app.gamelog" ng-show="isloggedin()">Gamelog</a></li>
+                    <li><a ui-sref="app.leaderboard">Leaderboard</a></li>
                 </ul>
             </div>
             <div class="col-xs-6 col-sm-5">
                 <h4 id="contactdetails">My Contact Details</h4>
                 <address>
-                    Harrow, London<br>
-                    UNITED KINGDOM<br>
-                    <i class="fa fa-phone"></i>: (+44) 7440118875<br>
+                    Harrow, London
+                    <br> UNITED KINGDOM
+                    <br>
+                    <i class="fa fa-phone"></i>: (+44) 7440118875
+                    <br>
                     <i class="fa fa-envelope"></i>:
                     <a href="mailto:joen.sg@gmail.com">joen.sg@gmail.com</a>
                 </address>
