@@ -2,7 +2,7 @@
 
 angular
     .module('rpsApp')
-    .constant("baseURL", "http://ec2-52-49-151-42.eu-west-1.compute.amazonaws.com:8080/") //server IP address
+    .constant("baseURL", "http://ec2-52-56-244-250.eu-west-2.compute.amazonaws.com:8080/") //server IP address
     .factory('loginFactory', ['$resource', 'baseURL', '$localStorage', function($resource, baseURL, $localStorage) {
         var loginfac = {};
 
@@ -53,6 +53,19 @@ angular
                         'Content-Type': 'application/json',
                         'x-access-token': loginfac.accessToken
 
+                    }
+                }
+            });
+        };
+
+        loginfac.loginfb = function() {
+            return $resource(baseURL + "users/facebook/callback", null, {
+                get: {
+                    method: "GET",
+                    isArray: false,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'x-access-token': loginfac.accessToken
                     }
                 }
             });

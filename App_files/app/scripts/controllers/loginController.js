@@ -48,6 +48,38 @@ angular
                 });
         };
 
+        // login function
+        $scope.loginfb = function() {
+
+            $scope.loading = true;
+
+            //POST the login data
+            loginFactory.loginfb().get(
+                function(response) { //GET success
+                    //data saved
+
+                    $scope.loading = false;
+
+                    // login successful if there's a token in the response
+                    if (response.token) {
+                        // store username and token in local storage to keep user logged in between page refreshes
+                        $localStorage.currentUser = { username: $scope.username, token: response.token };
+
+                        // add jwt token to auth header for all future requests made by the client to the server
+                        loginFactory.setAccessToken(response.token);
+
+                        // redirect to homepage
+                        $location.path('/');
+                    }
+                },
+                function(err) { //POST error
+                    $scope.loading = false;
+                    $scope.message = "Error: " + err.status + " " + err.statusText;
+
+                    $scope.error = 'Username or password is incorrect';
+                });
+        };
+
         $scope.logout = function() {
 
             $scope.loading = true;
